@@ -1,0 +1,53 @@
+.navbar {
+  /* background-color: rgba(244, 237, 229, 0.975); */
+  background-color: #2C2738;
+  padding:15px 25px;
+}
+
+.resName {
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.btn {
+  border-radius: 20px;
+  padding: 10px 25px;
+  color: white;
+  border: none;
+  background-color: #6C52B0;
+  font-weight: 500;
+}
+
+.btn:hover {
+  background-color: #332457;
+  color: white;
+  border: none;
+}
+
+.textBody {
+  width: 100%;
+  /* height: calc(100vh - 110px); */
+  padding: 50px 30px;
+  height: 430px;
+  background-color: #2C2738;
+  border-radius: 10px;
+}
+
+.admin_text {
+  font-size: 30px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.restaurantText {
+  font-size: 50px;
+  line-height: 90px;
+  color: whitesmoke;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}

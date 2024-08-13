@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="secContainer">
+    <form (ngSubmit)="logIn()" #loginForm="ngForm">
+      <div class="mb-3">
+        <label for="email" class="form-label email colorGrey mb-2"
+          >Email address :</label
+        >
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          name="email"
+          [(ngModel)]="credentials.email"
+          required
+        />
+      </div>
+      <div class="mb-4">
+        <label for="password" class="form-label colorGrey mb-2"
+          >Password :</label
+        >
+        <input
+          type="password"
+          name="password"
+          class="form-control"
+          id="password"
+          [(ngModel)]="credentials.password"
+          required
+        />
+      </div>
+      <button type="submit" class="btn mb-3" [disabled]="!loginForm.valid">
+        Login
+      </button>
+
+      <a
+        href="/register"
+        class="link-offset-2 link-underline link-underline-opacity-0 colorGrey"
+        >Don't have an account? <span class="registerText">Register</span></a
+      >
+    </form>
+  </div>
+</div>
