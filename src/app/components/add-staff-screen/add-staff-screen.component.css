@@ -1,15 +1,33 @@
-.container{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-form{
-    width: 50%;
-    height: 550px;
-    background-color:#323233 ;
-    padding: 20px;
-    border: none;
-    border-radius: 20px;
+form {
+  width: 50%;
+  height: 550px;
+  background-color: #323233;
+  padding: 20px;
+  border: none;
+  border-radius: 20px;
 }
+
+
+
+.btn {
+  width: 100%;
+  padding: 10px 20px;
+  color: white;
+  border: none;
+  background-color: #070606;
+  font-weight: 500;
+}
+
+.btn:hover {
+  background-color: #b5b5bc;
+  color:#070606;
+  border: none;
+}
+
