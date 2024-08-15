@@ -39,4 +39,16 @@ export class RestaurantService {
   register(user: any): Observable<any> {
     return this.http.post(`${this.apiUrl}/register`, user);
   }
+
+  getAllEmployees(): Observable<any> {
+    const headers = this.getHeaders();
+    return this.http.get(`${this.apiUrl}/employees`, { headers });
+  }
+
+  updateEmployees(id:any,data: any): Observable<any> {
+    const headers = this.getHeaders();
+    return this.http.put(`${this.apiUrl}/updateEmployee/${id}`, data ,{ headers });
+  }
+
+
 }

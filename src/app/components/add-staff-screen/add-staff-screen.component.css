@@ -1,0 +1,15 @@
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form{
+    width: 50%;
+    height: 550px;
+    background-color:#323233 ;
+    padding: 20px;
+    border: none;
+    border-radius: 20px;
+}

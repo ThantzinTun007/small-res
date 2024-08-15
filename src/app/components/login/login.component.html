@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container mt-5">
   <div class="secContainer">
     <form (ngSubmit)="logIn()" #loginForm="ngForm">
       <div class="mb-3">
@@ -7,7 +7,7 @@
         >
         <input
           type="email"
-          class="form-control"
+          class="form-control inputColor"
           id="email"
           name="email"
           [(ngModel)]="credentials.email"
@@ -21,7 +21,7 @@
         <input
           type="password"
           name="password"
-          class="form-control"
+          class="form-control inputColor"
           id="password"
           [(ngModel)]="credentials.password"
           required

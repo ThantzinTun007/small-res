@@ -12,6 +12,8 @@ import { HomeComponent } from './components/home/home.component';
 import { AdminScreenComponent } from './components/admin-screen/admin-screen.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { EmployeeDetailsComponent } from './components/employee-details/employee-details.component';
+import { AddStaffScreenComponent } from './components/add-staff-screen/add-staff-screen.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { RegisterComponent } from './components/register/register.component';
     AdminScreenComponent,
     LoginComponent,
     RegisterComponent,
+    EmployeeDetailsComponent,
+    AddStaffScreenComponent,
   ],
   imports: [
     BrowserModule,
