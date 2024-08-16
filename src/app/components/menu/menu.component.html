@@ -1,0 +1,70 @@
+<!-- for admin screen navbar -->
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <div class="d-flex justify-content-between w-100">
+      <a class="navbar-brand logoStyle" href="/admin">MSI Restaurant</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <button class="menuBtnStyle" type="button" routerLink="/admin">
+          Homepage
+        </button>
+
+        <button class="menuBtnStyle" (click)="editMenuItem('', menuItemForm)">
+          Add Menu Item
+        </button>
+        <app-menu-items
+          #menuItemForm
+          (formSubmit)="handleFormSubmit($event)"
+        ></app-menu-items>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- caption -->
+<div class="Capcontainer">
+  <h1>Menu Items</h1>
+</div>
+
+<!-- for table -->
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Menu name</th>
+        <th scope="col">Description</th>
+        <th scope="col">Price</th>
+        <th scope="col">Category</th>
+        <th scope="col" class="actionBtn">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let menu of menuitemsList; index as i">
+        <td>{{ i + 1 }}</td>
+        <td>{{ menu.name }}</td>
+        <td>{{ menu.description }}</td>
+        <td>{{ menu.price }}</td>
+        <td>{{ menu.category }}</td>
+        <td class="actionBtn">
+          <button class="btnEdit" (click)="editMenuItem(menu, menuItemForm)">Edit</button>
+          <button class="btnDel" (click)="deleteMenuItem(menu.menu_item_id)">
+            <i class="fa-solid fa-trash"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

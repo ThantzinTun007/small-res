@@ -10,6 +10,7 @@
 
 .form-control {
   background-color: #F4F4F6;
+  outline: none;
   border: none;
   color: rgb(234, 230, 230);
 }

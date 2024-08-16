@@ -16,7 +16,7 @@ export class AddStaffScreenComponent {
     phone: '',
     email: '',
     password: '',
-    role: 0,
+    role: 1,
   };
 
   constructor(private service: RestaurantService, private router: Router) {}

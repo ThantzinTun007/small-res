@@ -1,6 +1,6 @@
 <!-- for admin screen navbar -->
 <nav class="navbar navbar-expand-lg">
-  <div class="container-fluid ">
+  <div class="container-fluid">
     <div class="d-flex justify-content-between w-100">
       <a class="navbar-brand logoStyle" href="/admin">MSI Restaurant</a>
       <button
@@ -17,10 +17,16 @@
     </div>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <button class="menuBtnStyle" type="button" routerLink="/addStaff">Add Staff Member</button>
-        <button class="menuBtnStyle" type="button" >Menu</button>
-        <button class="menuBtnStyle" type="button" (click)="logOut()">LogOut<i class="fa-solid fa-arrow-right-from-bracket logoutIcon"></i></button>
-      
+        <button class="menuBtnStyle" type="button" routerLink="/addStaff">
+          Add Staff Member
+        </button>
+        <button class="menuBtnStyle" type="button" routerLink="/menu">
+          Menu
+        </button>
+        <button class="menuBtnStyle" type="button">Expenditure</button>
+        <button class="menuBtnStyle" type="button" (click)="logOut()">
+          LogOut<i class="fa-solid fa-arrow-right-from-bracket logoutIcon"></i>
+        </button>
       </div>
     </div>
   </div>
@@ -36,28 +42,44 @@
   <table class="table">
     <thead>
       <tr>
+        <th scope="col">Id</th>
         <th scope="col">Name</th>
         <th scope="col">position</th>
         <th scope="col">salary</th>
         <th scope="col">hire_date</th>
         <th scope="col">phone</th>
         <th scope="col">email</th>
-        <th scope="col">action</th>
+        <th scope="col" class="actionBtn">action</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let employee of employees">
+      <tr *ngFor="let employee of employees; index as i">
+        <td>{{ i + 1 }}</td>
         <td>{{ employee.name }}</td>
         <td>{{ employee.position }}</td>
         <td>{{ employee.salary }}</td>
         <td>{{ employee.hire_date }}</td>
         <td>{{ employee.phone }}</td>
         <td>{{ employee.email }}</td>
-        <td>
-          <button class="btnEdit">Edit</button>
-          <button class="btnDel"><i class="fa-solid fa-trash"></i></button>
+        <td class="actionBtn">
+          <button
+            class="btnEdit"
+            (click)="editEmployee('', employeeForm)"
+          >
+            Edit
+          </button>
+          <app-employee-details
+          #employeeForm
+          (formSubmit)="handleFormSubmit($event)"
+          ></app-employee-details>
+          <button
+            class="btnDel"
+            (click)="deleteOneEmployee(employee.employee_id)"
+            [disabled]="employee.role === 0"
+          >
+            <i class="fa-solid fa-trash"></i>
+          </button>
         </td>
-        
       </tr>
     </tbody>
   </table>
