@@ -1,79 +1,33 @@
-.form-popup {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.container{
+  width: 50%;
+ }
+ 
+ .title{
+    width: 50%;
+    margin: 0 auto;
+    height: 7vh;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #323232;
+    font-size: 25px;
+    font-weight: bold;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-.form-container {
-  background-color: #323233;
-  padding: 20px;
-  border-radius: 8px;
-  width: 300px;
-}
-
-.form-container h2 {
-  margin-top: 0;
-}
-
-.form-container label {
-  display: block;
-  margin-top: 10px;
-}
-
-.form-container input,
-.form-container textarea {
-  width: 100%;
-  padding: 8px;
-  margin-top: 5px;
-}
-
-h2 {
-  font-size: 20px;
-  text-align: center;
-  margin-bottom: 3px;
-  font-weight: bold;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  color: #f4f4f6;
-}
-
-.form-container button {
-  margin-top: 10px;
-  padding: 8px 12px;
-}
-
-label {
-  font-size: 15px;
-  color: #f4f4f6;
-}
-
-input,
-textarea {
-  outline: none;
-  width: 100%;
-  border-radius: 10px;
+.btn {
+  width: auto;
+  padding: 10px 20px;
+  color: white;
   border: none;
-  background-color: #f4f4f6;
+  font-weight: 500;
+  margin-right: 3px;
 }
 
-.menuBtnStyle {
-  width: 120px;
-  font-size: 15px;
-  padding: 5px;
+.btn:hover {
+  background-color: #b5b5bc;
+  color:#070606;
   border: none;
-  border-radius: 10px;
-  background-color: #161516;
-  color: rgba(240, 255, 255, 0.882);
-  /* box-shadow: 5px 5px 8px rgb(165, 164, 164); */
 }
-
-.menuBtnStyle:hover {
-  background-color: rgba(240, 255, 255, 0.882);
-  color: #161516;
-  box-shadow: none;
-}
+ 

@@ -45,9 +45,23 @@ export class RestaurantService {
     return this.http.get(`${this.apiUrl}/employees`, { headers });
   }
 
+  getOneEmployees(employeeId: number): Observable<any> {
+    const headers = this.getHeaders();
+    return this.http.get(`${this.apiUrl}/soloEmployee/${employeeId}`);
+  }
+
   updateEmployees(id: number, employee: any): Observable<any> {
     const headers = this.getHeaders();
-    return this.http.put(`${this.apiUrl}/updateEmployee/${id}`, employee);
+    return this.http.put(`${this.apiUrl}/updateEmployee/${id}`, employee, {
+      headers,
+    });
+  }
+
+  updatePassword(id: number, data: any): Observable<any> {
+    const headers = this.getHeaders();
+    return this.http.put(`${this.apiUrl}/updatePassword/${id}`, data, {
+      headers,
+    });
   }
 
   updateMenuItem(id: number, menuItem: any): Observable<any> {

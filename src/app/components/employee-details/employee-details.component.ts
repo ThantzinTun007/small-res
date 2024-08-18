@@ -1,50 +1,50 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 import { RestaurantService } from '../../service/restaurant.service';
+import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-employee-details',
   templateUrl: './employee-details.component.html',
   styleUrl: './employee-details.component.css',
 })
-export class EmployeeDetailsComponent {
-  constructor(private service: RestaurantService) {}
+export class EmployeeDetailsComponent implements OnInit {
+  employeeId!: any;
+  employee!: any;
 
-  @Input() employee: any = {
-    name: '',
-    position: '',
-    salary: '',
-    phone: '',
-    email: '',
-  };
+  constructor(
+    private service: RestaurantService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {}
 
-  isFormVisible = false;
+  ngOnInit(): void {
+    this.employeeId = this.route.snapshot.paramMap.get('id');
+    // alert(this.employeeId);
 
-  @Input() isEditing: boolean = false; // Add a flag to check if editing
-  @Output() formSubmit: EventEmitter<any> = new EventEmitter();
-
-  openForm(employee?: any) {
-    if (employee) {
-      this.employee = { ...employee };
-      this.isEditing = true;
-    } else {
-      this.employee = {
-        name: '',
-        position: '',
-        salary: '',
-        phone: '',
-        email: '',
-      };
-      this.isEditing = false;
-    }
-    this.isFormVisible = true;
+    this.service.getOneEmployees(this.employeeId).subscribe((response) => {
+      console.log(response);
+      this.employee = response;
+    });
   }
 
-  closeForm() {
-    this.isFormVisible = false;
-  }
+  updateEmployee() {
+    var inputData = {
+      name: this.employee.name,
+      position: this.employee.position,
+      salary: this.employee.salary,
+      phone: this.employee.phone,
+      email: this.employee.email,
+    };
 
-  onSubmit() {
-    this.formSubmit.emit(this.employee);
-    this.closeForm();
+    this.service.updateEmployees(this.employeeId, inputData).subscribe(
+      (response) => {
+        alert('updated successfully!');
+        this.router.navigate(['/admin']);
+      },
+      (error) => {
+        console.log(error.message);
+      }
+    );
   }
 }

@@ -1,6 +1,6 @@
 <div class="form-popup" *ngIf="isFormVisible">
   <div class="form-container">
-    <h2>Add New Menu Item</h2>
+    <h2 class="text-center">Menu Item</h2>
     <form (ngSubmit)="onSubmit()">
       <label for="name">Name</label>
       <input
@@ -38,8 +38,8 @@
       />
 
       <div class="d-flex justify-content-between">
-        <button type="submit" class="menuBtnStyle">Submit</button>
-        <button type="button" (click)="closeForm()" class="menuBtnStyle">
+        <button type="submit" class="btn btn-success">Submit</button>
+        <button type="button" (click)="closeForm()" class="btn btn-danger">
           Cancel
         </button>
       </div>

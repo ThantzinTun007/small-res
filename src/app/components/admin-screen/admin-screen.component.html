@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
     <div class="d-flex justify-content-between w-100">
-      <a class="navbar-brand logoStyle" href="/admin">MSI Restaurant</a>
+      <a class="navbar-brand logoStyle" href="/admin"><span class="text-danger">MSI</span> Restaurant</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -18,7 +18,7 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <button class="menuBtnStyle" type="button" routerLink="/addStaff">
-          Add Staff Member
+          Register Member
         </button>
         <button class="menuBtnStyle" type="button" routerLink="/menu">
           Menu
@@ -62,16 +62,9 @@
         <td>{{ employee.phone }}</td>
         <td>{{ employee.email }}</td>
         <td class="actionBtn">
-          <button
-            class="btnEdit"
-            (click)="editEmployee('', employeeForm)"
-          >
-            Edit
+          <button class="btnEdit" routerLink="/update-info/{{employee.employee_id}}">
+            Edit<i class="fa-solid fa-pencil ms-2"></i>
           </button>
-          <app-employee-details
-          #employeeForm
-          (formSubmit)="handleFormSubmit($event)"
-          ></app-employee-details>
           <button
             class="btnDel"
             (click)="deleteOneEmployee(employee.employee_id)"

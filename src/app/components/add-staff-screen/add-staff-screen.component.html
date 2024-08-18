@@ -1,90 +1,94 @@
-<div class="title">Staff Record Form</div>
-<div class="container mt-5">
-  <form (ngSubmit)="create()" #registerForm="ngForm">
-    <div class="mb-3 input-group flex-nowrap">
-      <span class="input-group-text" id="addon-wrapping">Name</span>
-      <input
-        type="text"
-        class="form-control"
-        name="name"
-        [(ngModel)]="user.name"
-        required
-      />
+<div>
+  <div class="container  mt-5">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="title">Register Member</h4>
+      </div>
+      <div class="card-body">
+        <form (ngSubmit)="create()">
+          <div class="mb-3">
+            <label for="name">Name :</label>
+            <input
+              type="text"
+              [(ngModel)]="user.name"
+              id="name"
+              name="name"
+              required
+              class="form-control"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="position">Position</label>
+            <input
+              type="text"
+              [(ngModel)]="user.position"
+              id="position"
+              name="position"
+              required
+              class="form-control"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="salary">Salary</label>
+            <input
+              type="number"
+              [(ngModel)]="user.salary"
+              id="salary"
+              name="salary"
+              required
+              class="form-control"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="hire_date">Hire Date</label>
+            <input
+              type="date"
+              [(ngModel)]="user.hire_date"
+              id="hire_date"
+              name="hire_date"
+              required
+              class="form-control"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="phone">Phone</label>
+            <input
+              type="text"
+              [(ngModel)]="user.phone"
+              id="phone"
+              name="phone"
+              required
+              class="form-control"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="email">Email Address</label>
+            <input
+              type="email"
+              [(ngModel)]="user.email"
+              id="email"
+              name="email"
+              required
+              class="form-control"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              [(ngModel)]="user.password"
+              id="password"
+              name="password"
+              required
+              class="form-control"
+            />
+          </div>
+          <div class="mb-3 d-flex justify-content-between">
+            <button routerLink="/admin" class="btn btn-danger">Back</button>
+            <button type="submit" class="btn btn-success">Add</button>
+          </div>
+        </form>
+      </div>
     </div>
-
-    <div class="mb-3 input-group flex-nowrap">
-      <span class="input-group-text" id="addon-wrapping">Position</span>
-      <input
-        type="text"
-        class="form-control"
-        id="position"
-        name="position"
-        [(ngModel)]="user.position"
-        required
-      />
-    </div>
-
-    <div class="mb-3 input-group flex-nowrap">
-      <span class="input-group-text" id="addon-wrapping">salary</span>
-      <input
-        type="number"
-        class="form-control"
-        id="salary"
-        name="salary"
-        [(ngModel)]="user.salary"
-        required
-      />
-    </div>
-
-    <div class="mb-3 input-group flex-nowrap">
-      <span class="input-group-text" id="addon-wrapping">Date</span>
-      <input
-        type="date"
-        class="form-control"
-        id="hire_date"
-        name="hire_date"
-        [(ngModel)]="user.hire_date"
-        required
-      />
-    </div>
-    <div class="mb-3 input-group flex-nowrap">
-      <span class="input-group-text" id="addon-wrapping">Phone</span>
-      <input
-        type="text"
-        class="form-control"
-        id="phone"
-        name="phone"
-        [(ngModel)]="user.phone"
-        required
-      />
-    </div>
-    <div class="mb-3 input-group flex-nowrap">
-      <span class="input-group-text" id="addon-wrapping">Email address</span>
-      <input
-        type="email"
-        class="form-control"
-        id="email"
-        name="email"
-        [(ngModel)]="user.email"
-        required
-      />
-    </div>
-    <div class="mb-3 input-group flex-nowrap">
-      <span class="input-group-text" id="addon-wrapping">Password</span>
-      <input
-        type="password"
-        class="form-control"
-        id="password"
-        name="password"
-        [(ngModel)]="user.password"
-        required
-      />
-    </div>
-    <button type="submit" class="btn mt-3" [disabled]="!registerForm.valid">
-      Add Details
-    </button>
-    <button (click)="back()" class="btn mt-3">
-      <i class="fa-solid fa-arrow-left"></i>Back
-    </button>
-  </form>
+  </div>
 </div>

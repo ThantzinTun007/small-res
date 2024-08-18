@@ -7,6 +7,7 @@ import { AdminScreenComponent } from './components/admin-screen/admin-screen.com
 import { EmployeeDetailsComponent } from './components/employee-details/employee-details.component';
 import { AddStaffScreenComponent } from './components/add-staff-screen/add-staff-screen.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { UpdatePasswordComponent } from './components/update-password/update-password.component';
 
 const routes: Routes = [
   {path: "", redirectTo: "/home", pathMatch: "full"},
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path: "home", component: HomeComponent},
   {path: "register", component: RegisterComponent},
   {path: "admin", component: AdminScreenComponent},
-  {path: "update", component: EmployeeDetailsComponent},
+  {path: "update-info/:id", component: EmployeeDetailsComponent},
+  {path: "update-password/:id", component: UpdatePasswordComponent},
   {path: "addStaff", component: AddStaffScreenComponent},
   {path: "menu", component: MenuComponent}
 ];

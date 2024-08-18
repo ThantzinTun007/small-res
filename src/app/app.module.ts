@@ -17,6 +17,7 @@ import { EmployeeDetailsComponent } from './components/employee-details/employee
 import { AddStaffScreenComponent } from './components/add-staff-screen/add-staff-screen.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { MenuItemsComponent } from './components/menu-items/menu-items.component';
+import { UpdatePasswordComponent } from './components/update-password/update-password.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { MenuItemsComponent } from './components/menu-items/menu-items.component
     AddStaffScreenComponent,
     MenuComponent,
     MenuItemsComponent,
+    UpdatePasswordComponent,
   ],
   imports: [
     BrowserModule,

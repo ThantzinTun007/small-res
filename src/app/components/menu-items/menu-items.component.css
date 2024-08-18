@@ -1,79 +1,79 @@
 .form-popup {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.form-container {
-  background-color: #323233;
-  padding: 20px;
-  border-radius: 8px;
-  width: 300px;
-}
-
-.form-container h2 {
-  margin-top: 0;
-}
-
-.form-container label {
-  display: block;
-  margin-top: 10px;
-}
-
-.form-container input,
-.form-container textarea {
-  width: 100%;
-  padding: 8px;
-  margin-top: 5px;
-}
-
-h2 {
-  font-size: 20px;
-  text-align: center;
-  margin-bottom: 3px;
-  font-weight: bold;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  color: #f4f4f6;
-}
-
-.form-container button {
-  margin-top: 10px;
-  padding: 8px 12px;
-}
-
-label {
-  font-size: 15px;
-  color: #f4f4f6;
-}
-
-input,
-textarea {
-  outline: none;
-  width: 100%;
-  border-radius: 10px;
-  border: none;
-  background-color: #f4f4f6;
-}
-
-.menuBtnStyle {
-  width: 120px;
-  font-size: 15px;
-  padding: 5px;
-  border: none;
-  border-radius: 10px;
-  background-color: #161516;
-  color: rgba(240, 255, 255, 0.882);
-  /* box-shadow: 5px 5px 8px rgb(165, 164, 164); */
-}
-
-.menuBtnStyle:hover {
-  background-color: rgba(240, 255, 255, 0.882);
-  color: #161516;
-  box-shadow: none;
-}
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .form-container {
+    background-color: #f4f4f9f3;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+  }
+  
+  .form-container h2 {
+    margin-top: 0;
+  }
+  
+  .form-container label {
+    display: block;
+    margin-top: 10px;
+  }
+  
+  .form-container input,
+  .form-container textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid rgba(118, 116, 116, 0.732);
+  }
+  
+  h2 {
+    font-size: 20px;
+    margin-bottom: 3px;
+    font-weight: bold;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: #19191a;
+  }
+  
+  .form-container button {
+    margin-top: 10px;
+    padding: 8px 12px;
+  }
+  
+  label {
+    font-size: 15px;
+    color: #232323;
+  }
+  
+  input,
+  textarea {
+    outline: none;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    background-color: #f4f4f6;
+  }
+  
+  .btn {
+    width: 120px;
+    font-size: 15px;
+    padding: 5px;
+    border: none;
+    border-radius: 10px;
+    color: rgba(240, 255, 255, 0.882);
+    /* box-shadow: 5px 5px 8px rgb(165, 164, 164); */
+  }
+  
+  .btn:hover {
+    background-color: rgba(240, 255, 255, 0.882);
+    color: #161516;
+    box-shadow: none;
+  }
+  
