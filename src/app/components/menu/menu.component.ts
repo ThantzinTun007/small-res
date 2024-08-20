@@ -30,35 +30,7 @@ export class MenuComponent implements OnInit {
     );
   }
 
-  deleteMenuItem(id: number) {
-    this.resService.deleteOneMunuitem(id).subscribe(
-      response => {
-        console.log('Menu item deleted successfully', response);
-        this.menuitemsList = this.menuitemsList.filter(item => item.menu_item_id !== id);
-      },
-      error => {
-        console.error('Error deleting menu item', error);
-      }
-    );
-  }
 
-  updateMenuItem(menuItem: any) {
-    this.resService.updateMenuItem(menuItem.menu_item_id, menuItem).subscribe(
-      (response) => {
-        console.log('Menu item updated successfully', response);
-        // Update the item in the local list
-        const index = this.menuitemsList.findIndex(
-          (item) => item.menu_item_id === menuItem.menu_item_id
-        );
-        if (index > -1) {
-          this.menuitemsList[index] = menuItem;
-        }
-      },
-      (error) => {
-        console.error('Error updating menu item', error);
-      }
-    );
-  }
 
   editMenuItem(menuItem: any, menuItemForm: any) {
     menuItemForm.openForm(menuItem);
@@ -76,11 +48,7 @@ export class MenuComponent implements OnInit {
   }
 
   handleFormSubmit(menuItem: any) {
-    if (menuItem.menu_item_id) {
-      this.updateMenuItem(menuItem);
-    } else {
-      this.createMenuItem(menuItem);
-    }
+    this.createMenuItem(menuItem);
   }
 
 }

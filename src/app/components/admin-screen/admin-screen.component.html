@@ -2,7 +2,9 @@
 <nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
     <div class="d-flex justify-content-between w-100">
-      <a class="navbar-brand logoStyle" href="/admin"><span class="text-danger">MSI</span> Restaurant</a>
+      <a class="navbar-brand logoStyle" href="/admin"
+        ><span class="text-danger">MSI</span> Restaurant</a
+      >
       <button
         class="navbar-toggler"
         type="button"
@@ -23,7 +25,9 @@
         <button class="menuBtnStyle" type="button" routerLink="/menu">
           Menu
         </button>
-        <button class="menuBtnStyle" type="button">Expenditure</button>
+        <button class="menuBtnStyle" type="button" routerLink="/expenditure">
+          Expenditure
+        </button>
         <button class="menuBtnStyle" type="button" (click)="logOut()">
           LogOut<i class="fa-solid fa-arrow-right-from-bracket logoutIcon"></i>
         </button>
@@ -62,7 +66,10 @@
         <td>{{ employee.phone }}</td>
         <td>{{ employee.email }}</td>
         <td class="actionBtn">
-          <button class="btnEdit" routerLink="/update-info/{{employee.employee_id}}">
+          <button
+            class="btnEdit"
+            routerLink="/update-info/{{ employee.employee_id }}"
+          >
             Edit<i class="fa-solid fa-pencil ms-2"></i>
           </button>
           <button

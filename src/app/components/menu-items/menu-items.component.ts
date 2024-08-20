@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { RestaurantService } from '../../service/restaurant.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-menu-items',
@@ -7,13 +8,20 @@ import { RestaurantService } from '../../service/restaurant.service';
   styleUrl: './menu-items.component.css',
 })
 export class MenuItemsComponent {
-  constructor(private resService: RestaurantService) {}
+  selectedFile: File | null = null;
+  imagePreview: string = '/assets/placeholder.jpg';
+
+  constructor(
+    private http: HttpClient,
+    private resService: RestaurantService
+  ) {}
 
   @Input() menuItem: any = {
     name: '',
     description: '',
     price: '',
     category: '',
+    image_url: '',
   };
 
   isFormVisible = false;
@@ -26,10 +34,38 @@ export class MenuItemsComponent {
       this.menuItem = { ...menuItem };
       this.isEditing = true;
     } else {
-      this.menuItem = { name: '', description: '', price: '', category: '' };
+      this.menuItem = { name: '', description: '', price: '', category: '' , image_url: ''};
       this.isEditing = false;
     }
     this.isFormVisible = true;
+  }
+
+  onFileSelected(event: Event) {
+    const input = event.target as HTMLInputElement;
+    if (input.files && input.files.length > 0) {
+      this.selectedFile = input.files[0];
+      const reader = new FileReader();
+      reader.onload = (e: any) => {
+        this.imagePreview = e.target.result;
+      };
+      reader.readAsDataURL(this.selectedFile);
+      const formData = new FormData();
+      formData.append('image', this.selectedFile, this.selectedFile.name);
+      this.http
+        .post<{ filepath: string }>(
+          'http://localhost:8080/api/upload',
+          formData
+        )
+        .subscribe(
+          (response) => {
+            console.log('Response:', response.filepath);
+            this.menuItem.image_url = response.filepath;
+          },
+          (error) => {
+            console.error('Error uploading image', error);
+          }
+        );
+    }
   }
 
   closeForm() {

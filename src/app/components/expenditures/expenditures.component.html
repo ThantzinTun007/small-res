@@ -1,0 +1,78 @@
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <div class="d-flex justify-content-between w-100">
+      <a class="navbar-brand logoStyle" href="/admin"
+        ><span class="text-danger">MSI</span> Restaurant</a
+      >
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <button class="menuBtnStyle" type="button" routerLink="/addExpend">
+          Add Expend
+        </button>
+        <app-expend-form
+          #expendItemForm
+          (formSubmit)="handleFormSubmit($event)"
+        ></app-expend-form>
+        <button class="menuBtnStyle" type="button" (click)="back()" ng>
+          Homepage<i
+            class="fa-solid fa-arrow-right-from-bracket logoutIcon"
+          ></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- caption -->
+<div class="Capcontainer">
+  <h1>Restaurant Expenditures Management</h1>
+</div>
+
+<!-- for table -->
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">description</th>
+        <th scope="col">amount</th>
+        <th scope="col">date</th>
+        <th scope="col">category</th>
+        <th scope="col">action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let expend of expenditures; index as i">
+        <td>{{ i + 1 }}</td>
+        <td>{{ expend.description }}</td>
+        <td>{{ expend.amount }}</td>
+        <td>{{ expend.expenditure_date }}</td>
+        <td>{{ expend.category }}</td>
+
+        <td>
+          <button
+            class="btnEdit"
+            (click)="editExpendItem(expend, expendItemForm)"
+          >
+            Edit
+          </button>
+          <button class="btnDel" (click)="deleteExpend(expend.expenditure_id)">
+            <i class="fa-solid fa-trash"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

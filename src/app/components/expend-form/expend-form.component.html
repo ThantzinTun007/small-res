@@ -1,0 +1,19 @@
+
+<div class="form-popup" *ngIf="isFormVisible">
+    <div class="form-container">
+        <h2>Edit Expend</h2>
+        <form (ngSubmit)="onSubmit()">
+            <label for="descript" > Description</label>
+            <textarea id="description" [(ngModel)]="expendItem.description" name="description" required></textarea>
+            <label for="amount">Amount</label>
+            <input type="text" id="amount" [(ngModel)]="expendItem.amount" name="amount" required>
+            <label for="date">Date</label>
+            <input type="date" id="expenditure_date" [(ngModel)]="expendItem.expenditure_date" name="mm/d/y" required>
+             <label for="category">Category</label>
+             <input type="text" id="category" [(ngModel)]="expendItem.category" name="category" required>
+
+             <button type="submit"  class="btn mt-3">Submit</button>
+             <button type="button"  class="btn mt-3" (click)="closeForm()">Cancel</button>
+        </form>
+    </div>
+</div>

@@ -18,6 +18,10 @@ import { AddStaffScreenComponent } from './components/add-staff-screen/add-staff
 import { MenuComponent } from './components/menu/menu.component';
 import { MenuItemsComponent } from './components/menu-items/menu-items.component';
 import { UpdatePasswordComponent } from './components/update-password/update-password.component';
+import { ExpendituresComponent } from './components/expenditures/expenditures.component';
+import { AddExpendComponent } from './components/add-expend/add-expend.component';
+import { ExpendFormComponent } from './components/expend-form/expend-form.component';
+import { MenuItemDetailsComponent } from './components/menu-item-details/menu-item-details.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +35,10 @@ import { UpdatePasswordComponent } from './components/update-password/update-pas
     MenuComponent,
     MenuItemsComponent,
     UpdatePasswordComponent,
+    ExpendituresComponent,
+    AddExpendComponent,
+    ExpendFormComponent,
+    MenuItemDetailsComponent,
   ],
   imports: [
     BrowserModule,

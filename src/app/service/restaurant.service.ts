@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -40,6 +40,23 @@ export class RestaurantService {
     return this.http.post(`${this.apiUrl}/register`, user);
   }
 
+  addExpend(expend: any): Observable<any> {
+    return this.http.post(`${this.apiUrl}/createExpense`, expend);
+  }
+
+  getAllExpend(): Observable<any> {
+    const headers = this.getHeaders();
+    return this.http.get(`${this.apiUrl}/expenditures`, { headers });
+  }
+
+  updateExpend(id:number,expendItem:any):Observable<any>{ 
+    return this.http.put(`${this.apiUrl}/updateExpense/${id}`,expendItem);
+  }
+
+  deleteOneExpend(id: number): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/deleteOneExpense/${id}`);
+  }
+
   getAllEmployees(): Observable<any> {
     const headers = this.getHeaders();
     return this.http.get(`${this.apiUrl}/employees`, { headers });
@@ -68,8 +85,15 @@ export class RestaurantService {
     return this.http.put(`${this.apiUrl}/menuitems/${id}`, menuItem);
   }
 
-  getAllMenus(): Observable<any> {
-    return this.http.get(`${this.apiUrl}/menuitems`);
+  getAllMenus(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/menuitems`).pipe(
+      map((menuItems: any[]) => {
+        return menuItems.map(menuItem => {
+          menuItem.imageUrl = `${this.apiUrl}${menuItem.image_url}`;
+          return menuItem;
+        });
+      })
+    );
   }
 
   postMenuitem(data: any): Observable<any> {

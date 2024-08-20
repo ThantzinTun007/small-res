@@ -1,0 +1,71 @@
+<div>
+  <div class="container mt-5">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="title">Add Expenditure</h4>
+      </div>
+      <div class="card-body">
+        <form (ngSubmit)="create()" #registerForm="ngForm">
+          <div class="mb-3">
+            <label for="description">Description :</label>
+            <input
+              type="text"
+              [(ngModel)]="expend.description"
+              id="description"
+              name="description"
+              required
+              class="form-control"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="amount">Amount :</label>
+            <input
+              type="text"
+              [(ngModel)]="expend.amount"
+              id="amount"
+              name="amount"
+              required
+              class="form-control"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="expenditure_date">Date :</label>
+            <input
+              type="date"
+              [(ngModel)]="expend.expenditure_date"
+              id="expenditure_date"
+              name="expenditure_date"
+              required
+              class="form-control"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="category">Category :</label>
+            <input
+              type="text"
+              [(ngModel)]="expend.category"
+              id="category"
+              name="category"
+              required
+              class="form-control"
+            />
+          </div>
+
+          <div class="mb-3 d-flex justify-content-between">
+            <button routerLink="/expenditure" class="btn btn-danger">
+              Back
+            </button>
+            <button
+              type="submit"
+              class="btn btn-success"
+              
+            >
+              Add
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

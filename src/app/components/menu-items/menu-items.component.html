@@ -1,6 +1,7 @@
 <div class="form-popup" *ngIf="isFormVisible">
   <div class="form-container">
     <h2 class="text-center">Menu Item</h2>
+    
     <form (ngSubmit)="onSubmit()">
       <label for="name">Name</label>
       <input
@@ -36,6 +37,11 @@
         name="category"
         required
       />
+      <label for="imageUrl">image</label>
+      <div>
+        <img [src]="imagePreview" alt="Image Preview" style="max-width: 200px; max-height: 200px;" />
+      </div>
+      <input type="file" (change)="onFileSelected($event)" />
 
       <div class="d-flex justify-content-between">
         <button type="submit" class="btn btn-success">Submit</button>
