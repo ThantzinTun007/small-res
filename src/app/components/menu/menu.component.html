@@ -20,7 +20,7 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <button class="menuBtnStyle" type="button" routerLink="/admin">
-          Homepage
+          Homepage<i class="fa-solid fa-house-chimney ms-2"></i>
         </button>
 
         <button class="menuBtnStyle" (click)="editMenuItem('', menuItemForm)">
@@ -44,7 +44,7 @@
   <div class="card" *ngFor="let menu of menuitemsList">
     <img
       [src]="menu.imageUrl"
-      class="card-img-top"
+      class="card-img-top" 
       alt="..."
       [routerLink]="['/menuItemDetails', menu.menu_item_id]"
     />

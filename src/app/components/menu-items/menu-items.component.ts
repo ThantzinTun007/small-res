@@ -9,7 +9,6 @@ import { HttpClient } from '@angular/common/http';
 })
 export class MenuItemsComponent {
   selectedFile: File | null = null;
-  imagePreview: string = '/assets/placeholder.jpg';
 
   constructor(
     private http: HttpClient,
@@ -20,11 +19,11 @@ export class MenuItemsComponent {
     name: '',
     description: '',
     price: '',
-    category: '',
-    image_url: '',
+    category: ''
   };
-
+previewImg = '';
   isFormVisible = false;
+
 
   @Input() isEditing: boolean = false; // Add a flag to check if editing
   @Output() formSubmit: EventEmitter<any> = new EventEmitter();
@@ -46,7 +45,7 @@ export class MenuItemsComponent {
       this.selectedFile = input.files[0];
       const reader = new FileReader();
       reader.onload = (e: any) => {
-        this.imagePreview = e.target.result;
+        this.previewImg = e.target.result;
       };
       reader.readAsDataURL(this.selectedFile);
       const formData = new FormData();
@@ -73,6 +72,7 @@ export class MenuItemsComponent {
   }
 
   onSubmit() {
+    console.log(this.menuItem);
     this.formSubmit.emit(this.menuItem);
     this.closeForm();
   }

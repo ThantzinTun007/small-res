@@ -26,9 +26,7 @@
           (formSubmit)="handleFormSubmit($event)"
         ></app-expend-form>
         <button class="menuBtnStyle" type="button" (click)="back()" ng>
-          Homepage<i
-            class="fa-solid fa-arrow-right-from-bracket logoutIcon"
-          ></i>
+          Homepage<i class="fa-solid fa-house-chimney ms-2"></i>
         </button>
       </div>
     </div>
@@ -50,7 +48,7 @@
         <th scope="col">amount</th>
         <th scope="col">date</th>
         <th scope="col">category</th>
-        <th scope="col">action</th>
+        <th scope="col" class="text-center">action</th>
       </tr>
     </thead>
     <tbody>
@@ -61,7 +59,7 @@
         <td>{{ expend.expenditure_date }}</td>
         <td>{{ expend.category }}</td>
 
-        <td>
+        <td class="text-center">
           <button
             class="btnEdit"
             (click)="editExpendItem(expend, expendItemForm)"

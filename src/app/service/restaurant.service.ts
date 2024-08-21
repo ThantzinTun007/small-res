@@ -49,8 +49,8 @@ export class RestaurantService {
     return this.http.get(`${this.apiUrl}/expenditures`, { headers });
   }
 
-  updateExpend(id:number,expendItem:any):Observable<any>{ 
-    return this.http.put(`${this.apiUrl}/updateExpense/${id}`,expendItem);
+  updateExpend(id: number, expendItem: any): Observable<any> {
+    return this.http.put(`${this.apiUrl}/updateExpense/${id}`, expendItem);
   }
 
   deleteOneExpend(id: number): Observable<any> {
@@ -64,7 +64,9 @@ export class RestaurantService {
 
   getOneEmployees(employeeId: number): Observable<any> {
     const headers = this.getHeaders();
-    return this.http.get(`${this.apiUrl}/soloEmployee/${employeeId}`);
+    return this.http.get(`${this.apiUrl}/soloEmployee/${employeeId}`, {
+      headers,
+    });
   }
 
   updateEmployees(id: number, employee: any): Observable<any> {
@@ -88,10 +90,19 @@ export class RestaurantService {
   getAllMenus(): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiUrl}/menuitems`).pipe(
       map((menuItems: any[]) => {
-        return menuItems.map(menuItem => {
+        return menuItems.map((menuItem) => {
           menuItem.imageUrl = `${this.apiUrl}${menuItem.image_url}`;
           return menuItem;
         });
+      })
+    );
+  }
+
+  getOneMenuitem(id: number): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/menuitems/${id}`).pipe(
+      map((menuItem: any) => {
+        menuItem.imageUrl = `${this.apiUrl}${menuItem.image_url}`;
+        return menuItem;
       })
     );
   }

@@ -22,7 +22,6 @@ export class MenuComponent implements OnInit {
     this.resService.getAllMenus().subscribe(
       (response) => {
         this.menuitemsList = response;
-        console.log(this.menuitemsList);
       },
       (error) => {
         console.error('Error fetching menuitems', error);
@@ -30,13 +29,12 @@ export class MenuComponent implements OnInit {
     );
   }
 
-
-
   editMenuItem(menuItem: any, menuItemForm: any) {
     menuItemForm.openForm(menuItem);
   }
 
   createMenuItem(menuItem: any) {
+    console.log(menuItem);
     this.resService.postMenuitem(menuItem).subscribe(
       (response) => {
         console.log('Added a menu item successfully', response);
