@@ -34,17 +34,24 @@
     </div>
   </div>
 </nav>
-
 <!-- caption -->
 <div class="Capcontainer">
   <h1>Menu Items</h1>
 </div>
-
+<div class="container">
+  <div class="menuItemBtn">
+    <button class="menuTypeBtn" (click)="getMenuitems('')">All</button>
+    <button class="menuTypeBtn" (click)="getMenuitems('appetizer')">Appetizer</button>
+    <button class="menuTypeBtn" (click)="getMenuitems('main dish')">Main Dish</button>
+    <button class="menuTypeBtn" (click)="getMenuitems('dessert')">Dessert</button>
+    <button class="menuTypeBtn" (click)="getMenuitems('beverage')">Beverage</button>
+  </div>
+</div>
 <div class="d-md-flex justify-content-around flex-wrap">
   <div class="card" *ngFor="let menu of menuitemsList">
     <img
       [src]="menu.imageUrl"
-      class="card-img-top" 
+      class="card-img-top w-100" 
       alt="..."
       [routerLink]="['/menuItemDetails', menu.menu_item_id]"
     />

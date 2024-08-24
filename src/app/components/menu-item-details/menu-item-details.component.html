@@ -1,38 +1,41 @@
-<div class="backgroundScreen">
-  <img src="/assets/images/background.jpg" alt="" class="background" />
-  <div class="titleForm">
-    <div class="titleInnerForm">
-      <h3 class="title">{{ menuItem.name }}</h3>
+<div class="mainContainer">
+  <div class="container d-flex justify-content-between mt-4">
+    <!-- for image -->
+    <div class="imgComtainer">
+      <img [src]="menuItem.imageUrl" alt="" class="image" />
     </div>
-  </div>
-</div>
-<img [src]="menuItem.imageUrl" alt="" class="backgroundImg" />
-<div class="body">
-  <div class="d-flex justify-content-between">
-    Catagory: {{ menuItem.category }}
-    <div>price: {{ menuItem.price }}</div>
-  </div>
-  <hr />
-  <div class="mt-3">
-    {{ menuItem.description }}
-  </div>
 
-  <div class="action d-flex justify-content-between mt-3">
-    <button class="btn blackColor me-2" type="button" routerLink="/menu">
-      <i class="fa-solid fa-arrow-left me-2"></i>Back
-    </button>
-    <div>
-      <button
-        class="btn blackColor"
-        (click)="editMenuItem(menuItem, menuItemForm)"
-      >
-        Edit
-      </button>
-      <app-menu-items
-        #menuItemForm
-        (formSubmit)="handleFormSubmit($event)"
-      ></app-menu-items>
-      <button class="btn blackColor ms-2">Delete</button>
+    <!-- for body -->
+    <div class="bodyContainer">
+      <h4 class="text-center mb-3">{{ menuItem.name }}</h4>
+      <h6 class="text-center mb-5">({{ menuItem.category }})</h6>
+      <div class="descriptionStyle">
+        {{ menuItem.description }}
+      </div>
+      <hr />
+      <div class="d-flex justify-content-between align-items-center">
+        <span class="priceStyle">Price : {{ menuItem.price }}k</span>
+        <div>
+          <button
+            class="btn btn-outline-success me-2"
+            (click)="editMenuItem(menuItem, menuItemForm)"
+          >
+            Edit
+          </button>
+          <app-menu-items
+            #menuItemForm
+            (formSubmit)="handleFormSubmit($event)"
+          ></app-menu-items>
+          <button
+            class="btn btn-outline-danger me-2"
+            (click)="deleteMenuItem(menuItemId)"
+          >
+          <i class="fa-solid fa-trash-can"></i>
+          </button>
+          <button class="btn backBtn" routerLink="/menu"><i class="fa-solid fa-house"></i></button>
+        </div>
+      </div>
+      <hr>
     </div>
   </div>
 </div>

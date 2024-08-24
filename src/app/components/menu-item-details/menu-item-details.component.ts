@@ -38,6 +38,17 @@ export class MenuItemDetailsComponent implements OnInit {
     );
   }
 
+  deleteMenuItem(id: number) {
+    this.service.deleteOneMunuitem(id).subscribe(
+      (response) => {
+        this.router.navigate(['/menu']);
+      },
+      (error) => {
+        console.error('Error deleting menu item', error);
+      }
+    );
+  }
+
   editMenuItem(menuItem: any, menuItemForm: any) {
     menuItemForm.openForm(menuItem);
   }

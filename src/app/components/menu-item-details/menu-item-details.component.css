@@ -1,81 +1,45 @@
-.backgroundScreen {
-  width: 100%;
-  height: 320px;
-  padding: 20px;
-}
-
-
-
-.btn {
-  width: 90px;
-  height: 40px;
-  margin-right: 3px;
-  font-size: 15px;
-  padding: 5px;
-  border: none;
+.imgComtainer{
+  width: 1100px;
+  height: 90vh;
   border-radius: 10px;
-  color: rgba(240, 255, 255, 0.882);
+  overflow: hidden;
 }
 
-.btn:hover {
-  background-color: rgb(172, 171, 171);
-  color: #161516;
-  box-shadow: none;
+.image{
+  height: 100vh;
+  margin: -10px -200px;
 }
 
-.background{
-    width: 100%;
-    opacity: 0.5;
-}
-
-.titleForm {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-
-
-.title {
-    
-  font-size: 50px;
-  font-weight: bold;
-  color: rgb(22, 22, 22);
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-}
-
-.categoryText {
-  font-size: 20px;
-  font-weight: 500;
-  text-align: center;
-}
-
-.body {
-  margin-top: 60px;
-  width: 97%;
+.bodyContainer{
+  width: 900px;
   margin-left: 20px;
-  padding: 100px 50px 20px;
-  background-color: #bcbcbcd4;
 }
 
-.backgroundImg {
-  position: absolute;
-  top: 50px;
-  right: 450px;
-  width: 400px;
-  border-radius: 50%;
-  border: 3px solid white;
+h4,h6{
+  font-weight: bold;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.menuBox{
-    display: inline-block;
-    width: 900px;
+.descriptionStyle{
+  opacity: 0.7;
+  line-height: 35px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.curser {
-  cursor: default;
+span{
+  font-size: 17px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.blackColor {
+
+.backBtn{
+  background-color: #F4F4F6;
+  color:black;
+  border: 1px solid black;
+}
+
+.backBtn:hover{
   background-color: #161516;
+  color: #F4F4F6;
 }
+

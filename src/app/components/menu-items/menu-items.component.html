@@ -1,50 +1,97 @@
 <div class="form-popup" *ngIf="isFormVisible">
   <div class="form-container">
     <h2 class="text-center">Menu Item</h2>
-    
+
     <form (ngSubmit)="onSubmit()">
-      <label for="name">Name</label>
-      <input
-        type="text"
-        id="name"
-        [(ngModel)]="menuItem.name"
-        name="name"
-        required
-      />
+      <div class="namePriceContainer">
+        <label for="name" class="me-2">Name:</label>
+        <input
+          type="text"
+          id="name"
+          [(ngModel)]="menuItem.name"
+          name="name"
+          required
+          class="me-4"
+        />
 
-      <label for="description">Description</label>
-      <textarea
-        id="description"
-        [(ngModel)]="menuItem.description"
-        name="description"
-        required
-      ></textarea>
-
-      <label for="price">Price</label>
-      <input
-        type="text"
-        id="price"
-        [(ngModel)]="menuItem.price"
-        name="price"
-        required
-      />
-
-      <label for="category">Category</label>
-      <input
-        type="text"
-        id="category"
-        [(ngModel)]="menuItem.category"
-        name="category"
-        required
-      />
-      <label for="imageUrl">image</label>
-      <div>
-        <img [src]="previewImg" alt="Image Preview" style="max-width: 200px; max-height: 200px;" />
+        <label for="price" class="me-2">Price:</label>
+        <input
+          type="text"
+          id="price"
+          [(ngModel)]="menuItem.price"
+          name="price"
+          class="me-4"
+          required
+        />
       </div>
-      <input type="file" (change)="onFileSelected($event)" />
 
-      <div class="d-flex justify-content-between">
-        <button type="submit" class="btn btn-success">Submit</button>
+      <div class="d-flex justify-content-between mb-3">
+        <label for="description" class="me-2">Description</label>
+        <input
+          type="text"
+          id="description"
+          [(ngModel)]="menuItem.description"
+          name="description"
+          required
+        />
+      </div>
+
+      <div class="d-flex align-items-center mb-4">
+        <label for="category mb-3">Category</label>
+        <div class="radioStyle">
+          <label>
+            <input
+              type="radio"
+              name="option"
+              value="appetizer"
+              [(ngModel)]="menuItem.category"
+            />
+            Appetizer
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="option"
+              value="main dish"
+              [(ngModel)]="menuItem.category"
+            />
+            Main Dish
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="option"
+              value="dessert"
+              [(ngModel)]="menuItem.category"
+            />
+            Dessert
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="option"
+              value="beverage"
+              [(ngModel)]="menuItem.category"
+            />
+            Beverage
+          </label>
+        </div>
+      </div>
+
+      <div class="imageBox">
+        <label for="imageUrl">Add Image<i class="fa-solid fa-image ms-3"></i> </label>
+        <div>
+          <img
+            [src]="previewImg"
+            alt="Image Preview"
+            style="max-width: 200px; max-height: 200px"
+          />
+        </div>
+      </div>
+      <input type="file" (change)="onFileSelected($event)"/>
+
+      <div class="d-flex justify-content-between mt-3">
+        <button type="submit" class="btn btn-success me-2">Add</button>
         <button type="button" (click)="closeForm()" class="btn btn-danger">
           Cancel
         </button>

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RestaurantService } from '../../service/restaurant.service';
 import { Router } from '@angular/router';
-import { MenuItemsComponent } from '../menu-items/menu-items.component';
 
 @Component({
   selector: 'app-menu',
@@ -12,16 +11,20 @@ export class MenuComponent implements OnInit {
   menuitemsList: any[] = [];
 
   ngOnInit() {
-    this.getMenuitems();
+    this.getMenuitems('');
   }
 
   constructor(private resService: RestaurantService, private router: Router) {}
 
-
-  getMenuitems() {
+  getMenuitems(category: string) {
     this.resService.getAllMenus().subscribe(
       (response) => {
         this.menuitemsList = response;
+        if (category) {
+          this.menuitemsList = this.menuitemsList.filter(
+            (item) => item.category == category
+          );
+        }
       },
       (error) => {
         console.error('Error fetching menuitems', error);
@@ -38,6 +41,7 @@ export class MenuComponent implements OnInit {
     this.resService.postMenuitem(menuItem).subscribe(
       (response) => {
         console.log('Added a menu item successfully', response);
+        this.router.navigate(['/menu']);
       },
       (error) => {
         console.error('Error adding', error);
@@ -48,5 +52,4 @@ export class MenuComponent implements OnInit {
   handleFormSubmit(menuItem: any) {
     this.createMenuItem(menuItem);
   }
-
 }

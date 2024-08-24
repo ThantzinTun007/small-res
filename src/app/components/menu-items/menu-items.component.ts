@@ -19,11 +19,10 @@ export class MenuItemsComponent {
     name: '',
     description: '',
     price: '',
-    category: ''
+    category: '',
   };
-previewImg = '';
+  previewImg = '';
   isFormVisible = false;
-
 
   @Input() isEditing: boolean = false; // Add a flag to check if editing
   @Output() formSubmit: EventEmitter<any> = new EventEmitter();
@@ -31,9 +30,16 @@ previewImg = '';
   openForm(menuItem?: any) {
     if (menuItem) {
       this.menuItem = { ...menuItem };
+      this.previewImg = menuItem.imageUrl;
       this.isEditing = true;
     } else {
-      this.menuItem = { name: '', description: '', price: '', category: '' , image_url: ''};
+      this.menuItem = {
+        name: '',
+        description: '',
+        price: '',
+        category: '',
+        image_url: '',
+      };
       this.isEditing = false;
     }
     this.isFormVisible = true;

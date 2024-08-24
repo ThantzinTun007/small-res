@@ -15,24 +15,32 @@
     background-color: #f4f4f9f3;
     padding: 20px;
     border-radius: 8px;
-    width: 300px;
+    width: 550px;
   }
   
   .form-container h2 {
     margin-top: 0;
+    margin-bottom: 10px;
   }
   
   .form-container label {
     display: block;
     margin-top: 10px;
   }
-  
-  .form-container input,
-  .form-container textarea {
+
+  .namePriceContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 0px;
+  }
+
+
+  .form-container input{
     width: 100%;
     padding: 8px;
     margin-top: 5px;
-    border: 1px solid rgba(118, 116, 116, 0.732);
+    color: #232323a3;
   }
   
   h2 {
@@ -61,20 +69,28 @@
     border: none;
     background-color: #f4f4f6;
   }
-  
-  .btn {
-    width: 120px;
-    font-size: 15px;
-    padding: 5px;
-    border: none;
+
+  .radioStyle{
+    width: 100%;
+    background-color: #F4F4F6;
+    margin-left: 10px;
+    padding: 10px;
     border-radius: 10px;
-    color: rgba(240, 255, 255, 0.882);
-    /* box-shadow: 5px 5px 8px rgb(165, 164, 164); */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
-  
-  .btn:hover {
-    background-color: rgba(240, 255, 255, 0.882);
-    color: #161516;
-    box-shadow: none;
+
+  .imageBox{
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
   }
+
+  img{
+    width: 50%;
+    border-radius: 10px;
+    margin: 5px 0px;
+  }
+
   
