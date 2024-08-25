@@ -7,7 +7,7 @@
       <div class="card-body">
         <form (ngSubmit)="logIn()" #loginForm="ngForm">
           <div class="mb-3">
-            <label for="email" class="form-label email colorGrey mb-2"
+            <label for="email" class="form-label colorGrey mb-2"
               >Email address :</label
             >
             <input
@@ -35,6 +35,9 @@
           <button type="submit" class="btn mb-3" [disabled]="!loginForm.valid">
             Login
           </button>
+          <div class="text-center registerText">
+            Don't have an account? <span routerLink="/register">Register</span>
+          </div>
         </form>
       </div>
     </div>

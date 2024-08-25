@@ -1,17 +1,25 @@
-.secContainer {
-  width: 500px;
-  height: auto;
-  background-color: #323233;
-  padding: 20px 25px 50px;
-  border-radius: 20px;
-  margin: 0 auto;
-  box-shadow: 5px 5px 10px rgb(139, 136, 136);
+.container {
+  width: 50%;
 }
 
-.form-control {
-  background-color: #F4F4F6;
-  border: none;
-  color: rgb(234, 230, 230);
+.title {
+  width: 50%;
+  margin: 0 auto;
+  height: 7vh;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #323232;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+label{
+  font-size: 14px;
+  margin-bottom: 3px;
 }
 
 .btn {
@@ -21,22 +29,23 @@
   border: none;
   background-color: #070606;
   font-weight: 500;
+  margin-right: 3px;
 }
 
 .btn:hover {
   background-color: #b5b5bc;
-  color: white;
+  color: #070606;
   border: none;
 }
 
-.colorGrey{
-    color: rgba(238, 241, 245, 0.767);
+.signinText{
+  font-size: 13px;
 }
 
-.registerText{
-    color: #3096ab;
-}
-
-.registerText:hover{
-    color:#e7e5ee;
+span{
+  font-size: 15px;
+  color: rgb(64, 87, 234);
+  cursor: pointer;
+  margin-left: 2px;
+  font-weight: 500;
 }

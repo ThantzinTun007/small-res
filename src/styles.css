@@ -2,9 +2,13 @@
 @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 body{
-    /* background-color: #557159; */
-    
     background-color: #f4f4f6;
-    
-    /* padding: 50px 50px 0px 0px; */
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+
 }

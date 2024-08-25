@@ -1,28 +1,98 @@
-<div class="container mt-5">
-    <div class="secContainer">
-      <form>
-        <div class="mb-3">
-            <label for="name" class="form-label email colorGrey mb-2"
-              >Name :</label
-            >
-            <input type="name" class="form-control" id="name" required />
+<div>
+  <div class="container mt-5">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="title">Register</h4>
+      </div>
+      <div class="card-body">
+        <form (ngSubmit)="register()" #registerForm="ngForm">
+          <div class="mb-3">
+            <label for="name">Name :</label>
+            <input
+              type="text"
+              [(ngModel)]="employee.name"
+              id="name"
+              name="name"
+              required
+              class="form-control"
+            />
           </div>
-        <div class="mb-3">
-          <label for="email" class="form-label email colorGrey mb-2"
-            >Email address :</label
-          >
-          <input type="email" class="form-control" id="email" required />
-        </div>
-        <div class="mb-4">
-          <label for="password" class="form-label colorGrey mb-2"
-            >Password     :</label
-          >
-          <input type="password" class="form-control" id="password" required />
-        </div>
-        <button type="submit" class="btn mb-3">Login</button>
-  
-        <a href="/logIn" class="link-offset-2 link-underline link-underline-opacity-0 colorGrey">Already have an account? <span class="registerText">LogIn</span></a>
-      </form>
+          <div class="mb-3">
+            <label for="position">Position</label>
+            <input
+              type="text"
+              [(ngModel)]="employee.position"
+              id="position"
+              name="position"
+              required
+              class="form-control"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="salary">Salary</label>
+            <input
+              type="number"
+              [(ngModel)]="employee.salary"
+              id="salary"
+              name="salary"
+              required
+              class="form-control"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="hire_date">Hire Date</label>
+            <input
+              type="date"
+              [(ngModel)]="employee.hire_date"
+              id="hire_date"
+              name="hire_date"
+              required
+              class="form-control"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="phone">Phone</label>
+            <input
+              type="text"
+              [(ngModel)]="employee.phone"
+              id="phone"
+              name="phone"
+              required
+              class="form-control"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="email">Email Address</label>
+            <input
+              type="email"
+              [(ngModel)]="employee.email"
+              id="email"
+              name="email"
+              required
+              class="form-control"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              [(ngModel)]="employee.password"
+              id="password"
+              name="password"
+              required
+              class="form-control"
+            />
+          </div>
+          <div class="mb-3 d-flex justify-content-between">
+            <button type="submit" class="btn" [disabled]="!registerForm.valid">
+              Sign up
+            </button>
+          </div>
+          <div class="signinText text-center">
+            Already have an account? <span routerLink="/logIn">Sign in</span>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
-  
+</div>

@@ -13,8 +13,12 @@
   color: #323232;
   font-size: 25px;
   font-weight: bold;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+label {
+  font-size: 14px;
 }
 
 .btn {
@@ -33,7 +37,14 @@
   border: none;
 }
 
+.registerText {
+  font-size: 13px;
+}
 
-.registerText:hover{
-    color:#e7e5ee;
+span {
+  font-size: 15px;
+  color: rgb(64, 87, 234);
+  cursor: pointer;
+  margin-left: 2px;
+  font-weight: 500;
 }
