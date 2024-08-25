@@ -48,7 +48,7 @@
   font-family: Georgia, "Times New Roman", Times, serif;
 }
 
-.menuItemBtn{
+.menuItemBtn {
   width: 50%;
   margin: 0 auto;
   margin-bottom: 40px;
@@ -57,7 +57,7 @@
   align-items: center;
 }
 
-.menuTypeBtn{
+.menuTypeBtn {
   width: auto;
   padding: 5px 15px;
   border: 1px solid #323233;
@@ -66,7 +66,7 @@
   transition: 0.3s;
 }
 
-.menuTypeBtn:hover{
+.menuTypeBtn:hover {
   color: white;
   background-color: #323233;
   transform: scale(1.2);
@@ -109,36 +109,35 @@
   color: rgb(188, 28, 28);
 }
 
-.actionBtn{
-    text-align: center;
+.actionBtn {
+  text-align: center;
 }
 
-.card{
+.card {
   width: 300px;
   height: auto;
   margin: 10px 3px;
   padding: 15px;
-  border: none ;
+  border: none;
   border-radius: 20px;
 }
 
-img{
+img {
   border-radius: 20px;
   cursor: pointer;
 }
 
-h5{
+h5 {
   font-size: 20px;
   font-weight: bold;
 }
 
-.menu{
+.menu {
   width: 100%;
   border-radius: 20px;
   align-items: center;
   padding: 10px;
   font-size: 15px;
   font-weight: bold;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-
