@@ -28,7 +28,7 @@ export class AdminScreenComponent implements OnInit {
     this.services.getAllEmployees().subscribe(
       (response) => {
         console.log(`successfully`, response);
-        // this.employees = response;
+        //  this.employees = response;
         this.employees = response.filter((i: any) => i.email !== this.email);
       },
       (error) => {
@@ -36,8 +36,6 @@ export class AdminScreenComponent implements OnInit {
       }
     );
   }
-
-
 
   deleteOneEmployee(id: number) {
     this.services.deleteOneEmployee(id).subscribe(
